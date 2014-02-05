@@ -69,9 +69,9 @@
         <configuration>
               <name>autodeploy_name</name>
               <filename>TestWebModule/target/TestWebModule-0.0.1-SNAPSHOT.war</filename>
-             <hostname>wwglbl00034.gotclm.volvo.net</hostname>
-             <username>admin</username>
-             <password>@dmin123</password>
+             <hostname></hostname>
+             <username></username>
+             <password></password>
         </configuration>
       </plugin>   -->
     </plugins>
