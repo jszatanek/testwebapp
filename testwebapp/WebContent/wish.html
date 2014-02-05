@@ -1,0 +1,51 @@
+
+<html>
+
+<head>
+<title>Welcome to Volvo IT Application Infrastructure</title>
+<meta charset="utf-8">
+<meta http-equiv="Cache-control" content="public">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="rhino.js"></script>
+<script type="text/javascript" src="mouse.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+$('#slider').rhinoslider({
+effect: 'fade',
+controlsMousewheel: false,
+controlsKeyboard: false,
+controlsPrevNext: false,
+controlsPlayPause: false,
+autoPlay: true,
+showBullets: 'never',
+showControls: 'never'
+});
+});
+</script>
+
+<style type="text/css">
+#slider {height:90px;/*IE bugfix*/ padding:0; margin:0;}
+#slider li { list-style:none;}
+#page {margin-bottom:0px; text-align:center; vertical-align:middle;}
+</style>
+</head>
+</head>
+
+<body bgcolor="">
+
+<p align="center"><font size="3" style="font-family:verdana;" color="A4170D">Volvo IT Application Infrastructure wish you an<br>
+</font></p>
+<p align="center"><b><font style="font-family:verdana;" size="5" color="A1190B">Happy new year 2014 ! Best wishes from the cloud !<br></font></b></p>
+<p align="center"><img src="cloud.jpg" alt="Volvo IT" width="833" height="540" border="0"></p>
+<p align="center"><font style="font-family:verdana;" color="A4400C" size="1">This application is hosted on Openshift. Powered by:</font></p>
+<div id="page">
+<ul id="slider">
+	<li><a href="http://www.volvoit.com/" target="_blank"><img src="volvoit.jpg" width="170" height="77" alt="Volvo IT" border="0"></a>
+	<li><a href="http://www.redhat.com/" target="_blank"><img src="redhat-logo1.jpg" width="260" height="84" alt="RHEL 6 Jboss EAP 6.1" border="0"></a>
+</ul>
+</div>
+</body>
+</html>
+
+

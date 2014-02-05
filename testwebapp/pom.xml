@@ -1,0 +1,79 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>TestWebModule</groupId>
+  <artifactId>TestWebModule</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <properties>
+    <!-- Explicitly declaring the source encoding eliminates the following message: -->
+    <!-- [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent! -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <!-- JBoss dependency versions -->
+
+    <version.org.jboss.as.plugins.maven.plugin>7.3.Final</version.org.jboss.as.plugins.maven.plugin>
+
+    <!-- <version.org.jboss.spec.jboss.javaee.6.0>3.0.2.Final</version.org.jboss.spec.jboss.javaee.6.0> -->
+    <!-- Alternatively, comment out the above line, and un-comment the line below to use version 3.0.2.Final-redhat-3 which is a release certified to work with JBoss 
+      EAP 6. It requires you have access to the JBoss EAP 6 maven repository. -->
+    <version.org.jboss.spec.jboss.javaee.6.0>3.0.2.Final-redhat-3</version.org.jboss.spec.jboss.javaee.6.0>
+
+    <!-- other plugin versions -->
+    <version.compiler.plugin>2.3.1</version.compiler.plugin>
+    <version.war.plugin>2.1.1</version.war.plugin>
+
+    <!-- maven-compiler-plugin -->
+    <maven.compiler.target>1.6</maven.compiler.target>
+    <maven.compiler.source>1.6</maven.compiler.source>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>2.4</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- dependency> <groupId>javax</groupId> <artifactId>javaee-web-api</artifactId> <version>6.0</version> <scope>provided</scope> </dependency> -->
+    <dependency>
+      <groupId>com.volvo.jvs.support.jms-runtimes</groupId>
+      <artifactId>ibmmq-runtime</artifactId>
+      <version>7.0.1.3</version>
+      <type>pom</type>
+    </dependency>
+  </dependencies>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${version.compiler.plugin}</version>
+        <configuration>
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.target}</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>${version.war.plugin}</version>
+        <configuration>
+          <warSourceDirectory>WebContent</warSourceDirectory>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+      </plugin>
+      <!-- JBoss AS plugin to deploy war -->
+  <!--     <plugin>
+        <groupId>org.jboss.as.plugins</groupId>
+        <artifactId>jboss-as-maven-plugin</artifactId>
+        <version>${version.org.jboss.as.plugins.maven.plugin}</version>
+        <configuration>
+              <name>autodeploy_name</name>
+              <filename>TestWebModule/target/TestWebModule-0.0.1-SNAPSHOT.war</filename>
+             <hostname>wwglbl00034.gotclm.volvo.net</hostname>
+             <username>admin</username>
+             <password>@dmin123</password>
+        </configuration>
+      </plugin>   -->
+    </plugins>
+  </build>
+</project>
